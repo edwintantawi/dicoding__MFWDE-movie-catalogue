@@ -1,3 +1,5 @@
+import TheMovieDbSource from '../../data/themoviedb-source';
+
 const UpComing = {
   async render() {
     return `
@@ -5,7 +7,8 @@ const UpComing = {
     `;
   },
   async afterRender() {
-    // setelah render
+    const movies = await TheMovieDbSource.upComingMovies();
+    console.info(movies);
   },
 };
 
